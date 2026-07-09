@@ -105,12 +105,12 @@
                 Console.WriteLine("Do you want to play again? press (Y) for yes or press (N) for no");
                 string response = Console.ReadLine().ToUpper();
 
-                if (response == "Y")
+                if (response == Decision.Y.ToString())
                 {
                     validResponse = true;
                     play(); 
                 }
-                else if (response == "N")
+                else if (response == Decision.N.ToString())
                 {
                     validResponse = true;
                     Console.WriteLine("Game Over!!!");
