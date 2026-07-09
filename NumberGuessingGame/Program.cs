@@ -2,19 +2,20 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void play()
         {
-            int maximum =0;
+            int maximum = 0;
             Console.WriteLine("What difficulty do you like (E) Easy, (M) Meduim, (H) Hard? ");
 
             string difficulty = Console.ReadLine().ToUpper();
 
-            
 
-            if(difficulty == "E")
+            //if ((di))
+            if (difficulty == "E")
             {
                 maximum = 10;
-            }else if(difficulty == "M")
+            }
+            else if (difficulty == "M")
             {
                 maximum = 50;
 
@@ -25,11 +26,14 @@
             }
 
 
+
+
             NumberGuessing numberGuesing = new NumberGuessing(1, maximum);
 
             bool guessed = false;
 
-            while (!guessed) {
+            while (!guessed)
+            {
 
                 Console.WriteLine("Please enter your guess");
 
@@ -63,7 +67,7 @@
                 else
                 {
 
-                GuessResult result = numberGuesing.makeGuess(Convert.ToInt32(guess));
+                    GuessResult result = numberGuesing.makeGuess(Convert.ToInt32(guess));
 
                     if (result == GuessResult.tooLow)
                     {
@@ -92,6 +96,59 @@
 
                 }
             }
+
+
+            Console.WriteLine("Do you want to play again? press (Y) for yes or press (N) for no");
+
+            string response = Console.ReadLine().ToUpper();
+
+            bool responseCorrect = false;
+
+
+            if ((response == "Y" )|| (response == "N"))
+            {
+                responseCorrect = true;
+            }
+            else
+            {
+                responseCorrect = false;
+            }
+
+
+            if (responseCorrect == true)
+            {
+
+
+
+
+                if (response == "Y")
+                {
+
+                    guessed = false;
+                    play();
+                }
+                else if (response == "N")
+                {
+                    guessed = true;
+
+                    Console.WriteLine("Game Over!!!");
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please respond only with (Y) or (N) for no!");
+
+            }
+
+            }
+        
+        static void Main(string[] args)
+        {
+
+            play();
+
+
         }
     }
 }
