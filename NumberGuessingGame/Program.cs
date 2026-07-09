@@ -10,7 +10,6 @@
             string difficulty = Console.ReadLine().ToUpper();
 
 
-            //if ((di))
             if (difficulty == "E")
             {
                 maximum = 10;
@@ -34,6 +33,8 @@
 
             while (!guessed)
             {
+
+
 
                 Console.WriteLine("Please enter your guess");
 
@@ -97,52 +98,32 @@
                 }
             }
 
+            bool validResponse = false;
 
-            Console.WriteLine("Do you want to play again? press (Y) for yes or press (N) for no");
-
-            string response = Console.ReadLine().ToUpper();
-
-            bool responseCorrect = false;
-
-
-            if ((response == "Y" )|| (response == "N"))
+            while (!validResponse)
             {
-                responseCorrect = true;
-            }
-            else
-            {
-                responseCorrect = false;
-            }
-
-
-            if (responseCorrect == true)
-            {
-
-
-
+                Console.WriteLine("Do you want to play again? press (Y) for yes or press (N) for no");
+                string response = Console.ReadLine().ToUpper();
 
                 if (response == "Y")
                 {
-
-                    guessed = false;
-                    play();
+                    validResponse = true;
+                    play(); 
                 }
                 else if (response == "N")
                 {
-                    guessed = true;
-
+                    validResponse = true;
                     Console.WriteLine("Game Over!!!");
-
+                }
+                else
+                {
+                   
+                    Console.WriteLine("Invalid input. Please respond only with (Y) or (N)!");
                 }
             }
-            else
-            {
-                Console.WriteLine("Please respond only with (Y) or (N) for no!");
 
-            }
+        }
 
-            }
-        
         static void Main(string[] args)
         {
 
