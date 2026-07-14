@@ -38,7 +38,7 @@
 
                 Console.WriteLine("Please enter your guess");
 
-                string guess = Console.ReadLine();
+                string guess = Console.ReadLine().ToUpper();
 
                 if (guess == " " || guess == "")
                 {
